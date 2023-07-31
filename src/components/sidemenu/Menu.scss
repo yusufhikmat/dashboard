@@ -1,0 +1,12 @@
+.sidemenu{
+    display:flex;
+    flex-direction: column;
+    gap:50px;
+    margin-top: 2rem;
+
+    .sidemenu-link{
+        display:flex;
+        font-size: 1.3rem;
+        gap:10px;
+    }
+}

@@ -1,32 +1,45 @@
-import React from 'react';
 import './App.css';
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
-  Link,
 } from "react-router-dom";
 import Home from './pages/home/Home';
 import Products from './pages/products/Products';
 import Users from './pages/users/Users';
-
+import Login from './pages/login/Login';
+import Layout from './components/layout/Layout';
+import Posts from './pages/posts/Posts';
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: (
-        <Home />
-      ),
+      element: <Layout />,
+      children:[
+        {
+          path: "/home",
+          element: <Home />
+        },
+        {
+          path: "products",
+          element: <Products />
+        },
+        {
+          path: "users",
+          element: <Users />
+        },
+        {
+          path: "post",
+          element: <Posts />
+        },
+      ],
+      
     },
     {
-      path: "products",
-      element: <Products />
+      path: "login",
+      element: <Login />
     },
-    {
-      path: "users",
-      element: <Users />
-    },
+    
   ]);
   return (
     <RouterProvider router={router} />
