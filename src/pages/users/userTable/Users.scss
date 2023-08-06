@@ -1,0 +1,24 @@
+.userTable{
+    height: 100%;
+    width:100%;
+
+    .datagrid{
+        display:flex;
+        justify-content: space-between;
+    }
+
+    .MuiDataGrid-toolbarContainer{
+        flex-direction: row-reverse;
+    }
+    .details{
+        cursor: pointer;
+    }
+    .btn-user{
+        background-color: green;
+        color: #fff;
+        padding: 0.7rem;
+        border: none;
+        border-radius: 0.2rem;
+        font-size: 1.1rem;
+    }
+}
