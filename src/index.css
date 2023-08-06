@@ -2,3 +2,11 @@
     margin-top: 5rem;
     color:red;
 }
+.sideDrawer-btn{
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    border: none;
+}

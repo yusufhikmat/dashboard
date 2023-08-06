@@ -42,7 +42,7 @@ const SideDrawer = ({children}:Props) => {
         open={state['right']}
         // onClose={toggleDrawer(false)}
       >
-        <button onClick={toggleDrawer(false)}>x</button>
+        <button className='sideDrawer-btn' onClick={toggleDrawer(false)}>x</button>
         {children}
         
       </Drawer>
