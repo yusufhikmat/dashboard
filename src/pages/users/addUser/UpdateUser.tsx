@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { useAddUserMutation, useGetUsersQuery } from '../../../api/userApi';
+import { useUpdateUserMutation, useGetUsersQuery } from '../../../api/userApi';
+import { useParams } from 'react-router-dom';
 
-type AddUserProps = {
-    setOpen : React.Dispatch<React.SetStateAction<boolean>>
+type UpdateUserProps = {
+  setOpen : React.Dispatch<React.SetStateAction<boolean>>
 }
-const AddUser = ({setOpen}:AddUserProps) => {
+const UpdateUser = ({setOpen}:UpdateUserProps) => {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -12,16 +13,17 @@ const AddUser = ({setOpen}:AddUserProps) => {
   const [address, setAddress] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [website, setWebsite] = useState("");
-
   const {data = []} = useGetUsersQuery();
-  //const { refetch } = useGetUsersQuery();
-
-  const [addUser] = useAddUserMutation();
+  const [UpdateUser] = useUpdateUserMutation();
+  const {id} = useParams();
+  const editData = data.findIndex((data)=> (data.id).toString() === id)
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const id = data.length ? data[data.length - 1].id + 1 : 1;
+   
+
     console.log('Submitting user data:', {
-      id: id,
+      id: editData,
       name: name,
       username: username,
       email: email,
@@ -45,8 +47,8 @@ const AddUser = ({setOpen}:AddUserProps) => {
     });
 
     try {
-      await addUser({
-        id:id,
+      await UpdateUser({
+        id:editData,
         name: name,
         username: username,
         email: email,
@@ -79,7 +81,7 @@ const AddUser = ({setOpen}:AddUserProps) => {
       setWebsite('');
 
       // Close the form after successful submission
-       setOpen(false);
+      setOpen(false);
     } catch (error) {
       console.error('Error adding user:', error);
     }
@@ -151,10 +153,10 @@ const AddUser = ({setOpen}:AddUserProps) => {
           value={website} 
           onChange={(e)=>setWebsite(e.target.value)}/>
         </div>
-        <button type="submit">Add user</button>
+        <button type="submit" >Update user</button>
       </form>
     </div>
   )
 }
 
-export default AddUser
+export default UpdateUser
