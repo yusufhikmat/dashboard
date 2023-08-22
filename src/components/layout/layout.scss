@@ -1,0 +1,26 @@
+@import "../../style/responsive.scss";
+
+.layout{
+    background-color: rgba(250, 247, 250, 0.933);
+
+  .layout-component{
+    display: flex;
+    
+    .layout-sidebar{
+      background-color: lightgreen;
+      height: 100vh;
+      border-right: 2px solid black;
+        @include lg{
+            width: max-content;
+        }
+      }
+        
+        .layout-outlet{
+          width:100%;
+          padding:1rem;
+          background-color:#eee;
+        }
+      
+      
+  }
+  }

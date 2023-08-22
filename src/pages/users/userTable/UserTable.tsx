@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Users.scss'
-import { DataGrid, GridColDef, GridToolbar, GridValueGetterParams } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridToolbar } from '@mui/x-data-grid';
 import { useGetUsersQuery } from '../../../api/userApi';
 import SideDrawer from '../../../assets/sideDrawer';
 import UserDetail from '../userDetails/UserDetail';
 
 type userTableProps = {
-  setOpen : React.Dispatch<React.SetStateAction<boolean>>
+  setEditOpen : React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const UserTable = ({setOpen} :userTableProps)=> {
+const UserTable = ({setEditOpen} :userTableProps)=> {
   const columns: GridColDef[] = [
     { 
       field: 'id',
@@ -62,7 +62,7 @@ const UserTable = ({setOpen} :userTableProps)=> {
         const userId = params.row.id; // Get the ID from the current row
         return (
           <SideDrawer>
-            <UserDetail userId={userId} setOpen={setOpen} />
+            <UserDetail userId={userId} setEditOpen={setEditOpen}/>
           </SideDrawer>
         );
       },
@@ -71,20 +71,19 @@ const UserTable = ({setOpen} :userTableProps)=> {
   
   ];
 
-  const {data, error, isLoading} = useGetUsersQuery();
-  console.log(data)
+  const { data,isLoading,isSuccess,isError } = useGetUsersQuery();
+ 
   return (
     <div className='userTable'>
-      {error && <div>....somrthing went wrong</div>}
-      {isLoading && <div>....Loading</div>}
-     {data ?(
+      {isLoading && <h3>Loading...</h3>}
+      {isError && <h3>error</h3>}
+      {isSuccess && (
       <DataGrid
-      className='datagrid'
       rows={data}
       columns={columns}
       initialState={{
         pagination: {
-          paginationModel: { page: 0, pageSize: 10 },
+          paginationModel: { page: 0, pageSize: 15 },
         },
       }}
       slots={{toolbar:GridToolbar}}
@@ -101,7 +100,10 @@ const UserTable = ({setOpen} :userTableProps)=> {
       disableColumnSelector
       disableDensitySelector
     />
-     ):(<div>Loading ...</div>) }
+      )}
+     {/* {data ?(
+      
+     ):(<div>Loading ...</div>) } */}
       
     </div>
   );

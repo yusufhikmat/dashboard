@@ -9,6 +9,7 @@ import Users from './pages/users/Users';
 import Login from './pages/login/Login';
 import Layout from './components/layout/Layout';
 import Posts from './pages/posts/Posts';
+import Comments from './pages/comments/Comments';
 
 function App() {
   const router = createBrowserRouter([
@@ -17,7 +18,7 @@ function App() {
       element: <Layout />,
       children:[
         {
-          path: "/home",
+          path: "/",
           element: <Home />
         },
         {
@@ -29,8 +30,12 @@ function App() {
           element: <Users />
         },
         {
-          path: "post",
+          path: "posts",
           element: <Posts />
+        },
+        {
+          path: "comments",
+          element: <Comments />
         },
       ],
       

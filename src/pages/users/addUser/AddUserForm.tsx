@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { useAddUserMutation, useGetUsersQuery } from '../../../api/userApi';
+import './UserForm.scss';
+import {Button} from '../../../assets/Button';
 
 type AddUserProps = {
-    setOpen : React.Dispatch<React.SetStateAction<boolean>>
+  setAddOpen : React.Dispatch<React.SetStateAction<boolean>>
 }
-const AddUser = ({setOpen}:AddUserProps) => {
+const AddUser = ({setAddOpen}:AddUserProps) => {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -79,7 +81,7 @@ const AddUser = ({setOpen}:AddUserProps) => {
       setWebsite('');
 
       // Close the form after successful submission
-       setOpen(false);
+      setAddOpen(false);
     } catch (error) {
       console.error('Error adding user:', error);
     }
@@ -87,6 +89,7 @@ const AddUser = ({setOpen}:AddUserProps) => {
 
   return (
     <div className='addUser'>
+      <h3>Add New User</h3>
       <form className='addUserForm' onSubmit={handleSubmit}>
         <div className='adduserInput'>
           <label htmlFor='name'>Name</label>
@@ -151,7 +154,11 @@ const AddUser = ({setOpen}:AddUserProps) => {
           value={website} 
           onChange={(e)=>setWebsite(e.target.value)}/>
         </div>
-        <button type="submit">Add user</button>
+        <Button 
+        type="button"
+         className="custom-class" 
+         color="green"
+          >Add product</Button>
       </form>
     </div>
   )

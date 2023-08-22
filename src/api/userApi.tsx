@@ -8,30 +8,30 @@ export const userApi = createApi({
   endpoints: (builder) =>({
     getUsers :builder.query<User[], void>({
       query :()=>'users',
-      providesTags: ['User'],
+      providesTags:["User"]
     }),
     getUser :builder.query<User, string>({
       query :(id)=>`/users/${id}`,
       providesTags: ['User'],
     }),
-    addUser :builder.mutation<void, User>({
-      query : (body) =>({
+    addUser :builder.mutation({
+      query : (addNewUser) =>({
         url : 'users',
         method:'POST',
-        body,
+        body:addNewUser,
       }),
       invalidatesTags: ['User'],
     }),
 
-    updateUser :builder.mutation<User, Partial<User> & Pick<User, 'id'>>({
+    updateUser :builder.mutation({
       query : ({id,...rest}) =>({
         url : `users/${id}`,
-        method:'PUT',
+        method:'PATCH',
         rest,
       }),
       invalidatesTags: ['User'],
     }),
-    deleteUser:builder.mutation<void, string>({
+    deleteUser:builder.mutation({
       query : (id) =>({
         url : `users/${id}`,
         method:'DELETE',

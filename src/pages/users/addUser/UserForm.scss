@@ -1,0 +1,27 @@
+.addUser{
+   display: flex;
+   flex-direction: column;
+
+   .addUserForm{
+      width:100%;
+      max-width: 700px;
+
+   .adduserInput{
+      display:flex;
+      flex-direction: column;
+      margin-top: 0.3rem;
+      font-size: 1rem;
+      
+       label{
+         padding-bottom: 0.3rem;
+      }
+       input{
+         width:100%;
+         padding:0.4rem;
+         border:0.1px solid gray;
+         outline:none;
+         border-radius: 0.3rem;
+      }
+   }
+   }
+}

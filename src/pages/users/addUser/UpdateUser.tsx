@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { useUpdateUserMutation, useGetUsersQuery } from '../../../api/userApi';
 import { useParams } from 'react-router-dom';
+import {Button} from '../../../assets/Button';
 
 type UpdateUserProps = {
-  setOpen : React.Dispatch<React.SetStateAction<boolean>>
+  setEditOpen : React.Dispatch<React.SetStateAction<boolean>>
 }
-const UpdateUser = ({setOpen}:UpdateUserProps) => {
+const UpdateUser = ({setEditOpen}:UpdateUserProps) => {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ const UpdateUser = ({setOpen}:UpdateUserProps) => {
   const {data = []} = useGetUsersQuery();
   const [UpdateUser] = useUpdateUserMutation();
   const {id} = useParams();
-  const editData = data.findIndex((data)=> (data.id).toString() === id)
+  const editData = data.find((data)=> (data.id) === id)
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -81,7 +82,7 @@ const UpdateUser = ({setOpen}:UpdateUserProps) => {
       setWebsite('');
 
       // Close the form after successful submission
-      setOpen(false);
+      setEditOpen(false);
     } catch (error) {
       console.error('Error adding user:', error);
     }
@@ -89,6 +90,7 @@ const UpdateUser = ({setOpen}:UpdateUserProps) => {
 
   return (
     <div className='addUser'>
+      <h3>Edit user details</h3>
       <form className='addUserForm' onSubmit={handleSubmit}>
         <div className='adduserInput'>
           <label htmlFor='name'>Name</label>
@@ -153,7 +155,11 @@ const UpdateUser = ({setOpen}:UpdateUserProps) => {
           value={website} 
           onChange={(e)=>setWebsite(e.target.value)}/>
         </div>
-        <button type="submit" >Update user</button>
+        <Button 
+        type="button"
+         className="custom-class" 
+         color="green"
+          >Update user</Button>
       </form>
     </div>
   )

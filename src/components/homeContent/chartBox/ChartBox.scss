@@ -1,36 +1,34 @@
-.chartbox{
+@import '../../../style/responsive.scss';
+
+
+.custom-card{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     width:100%;
     height:100%;
 
-    .chartbox-info{
-        flex:2;
+    .custom-card-info{
         display:flex;
         flex-direction: column;
         justify-content: space-between;
+       
+        .number{
+            font-size: 1.3rem;
 
-        .title{
-            display:flex;
-            gap:5px;
+            @include lg{
+                font-size: 1rem;
+            }
         }
     }
-    .chartbox-chart{
-        flex: 2;
-        display:flex;
+    .custom-card-right{
+        display: flex;
         flex-direction: column;
         justify-content: space-between;
-
-        .chart{
-            height: 100%;
-            width: 100%;
-            color:green;
-        }
-
-        .chart-text{
-            display:flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap:10px;
-        }
     }
+    .custom-card-icon{
+        align-items: center;
+        font-size: 2rem;
+    }
+
 }

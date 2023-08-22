@@ -1,12 +1,43 @@
-.sidemenu{
-    display:flex;
-    flex-direction: column;
-    gap:50px;
-    margin-top: 2rem;
+@import '../../style/responsive.scss';
 
+.sidemenu{
+   
+    width:240px;
+    @include md{
+        padding:0.2rem;
+    }
+    .nav-link{
+        display:flex;
+        padding-top: 1rem;
+        flex-direction: column;
+        row-gap: 2.5rem;
+    
     .sidemenu-link{
         display:flex;
-        font-size: 1.3rem;
+        color:#494545;
         gap:10px;
+        align-items: center;
+        padding:0.5rem;
+
+        &:active{
+            background-color: red;
+        }
+         &:hover{
+                background-color: green;
+                color:#fff;
+                border-radius: 0.3rem;
+                
+            }
+            .icon{
+                font-size: 1.5rem; 
+            }
+            .title{
+                font-size: 1.2rem;
+                @include md{
+                    display:none;
+                }
+            }
+        }
     }
-}
+    } 
+    

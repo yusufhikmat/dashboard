@@ -3,6 +3,7 @@ import Navbar from '../navbar/Navbar'
 import SideMenu from '../sidemenu/SideMenu'
 import { Outlet } from 'react-router-dom'
 import Footer from '../footer/Footer'
+import './layout.scss'
 
 const Layout = () => {
   return (

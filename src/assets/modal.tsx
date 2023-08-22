@@ -1,9 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { OperationCanceledException } from 'typescript';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -22,21 +19,20 @@ type Props ={
     children :any
 }
 const BasicModal=({children,open,setOpen}:Props) =>{
-  const handleOpen = () => setOpen(true);
+  // const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <div>
       
       <Modal
-        // open={handleOpen}
         open={open}
        
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-            <button  onClick={handleClose}>x</button>
+            <button  onClick={handleClose} className='btn-modal'>x</button>
         {children}
         </Box>
         

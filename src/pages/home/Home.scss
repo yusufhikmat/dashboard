@@ -1,24 +1,91 @@
+@import '../../style/responsive.scss';
+
 .home{
+display:flex;
+flex-direction: column;
+width:100%;
+
+h3{
+   font-size: 25px;
+   border-bottom: 1px solid #ccc;
+   padding-bottom: 3px;
+   margin-bottom: 1rem;
+
+   @include sm{
+    font-size: 15px;
+   }
+}
+.home-content{
     display:grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: minmax(180px, auto);
-    gap:10px;
+    gap:2rem;
+
+    @include lg{
+      grid-template-columns: repeat(3, 1fr);
+
+    }
+    @include md{
+      grid-template-columns: repeat(2, 1fr);
+
+    }
+    @include sm{
+      grid-template-columns: repeat(1, 1fr);
+
+    }
+
 
     .box{
         border:1px solid gray;
         border-radius: 0.5rem;
         padding:1rem;
+        box-sizing: border-box;
+        overflow: hidden;
     }
     .box1{
        grid-column: span 1; 
-       grid-row: span 3;
+      //  grid-row: span 3;
+      background: linear-gradient(to right, #0088FE, #61a2db);
+      box-shadow: 2px 3px 4px 4px rgba(0,0,0,0.1);
+    }
+    .box2{
+      background: linear-gradient(to right, #C3EDC0, #F8FDCF);
+      box-shadow: 2px 3px 4px 4px rgba(0,0,0,0.1);
+    }
+    .box3{
+      background: linear-gradient(to right, #FBA1B7, #FFD1DA);
+      box-shadow: 2px 3px 4px 4px rgba(0,0,0,0.1);
     }
     .box4{
         grid-column: span 1; 
-        grid-row: span 3;
+        background: linear-gradient(to right, #BEADFA, #D0BFFF);
      }
-     .box7{
-        grid-column: span 2; 
-        grid-row: span 2;
+     .box5{
+      grid-column:span 2;
+      grid-row:span 2;
+
+      @include sm{
+        display:none;
+      }
+
      }
+     
+     .box6,.box7{
+      grid-column:span 1;
+      grid-row:span 3;
+
+      @include xl{
+        grid-column:span 2;
+      }
+      @include lg{
+        grid-column:span 3;
+      }
+      @include md{
+        grid-column:span 2;
+      }
+      @include sm{
+        grid-column:span 1;
+      }
+     }
+}
 }

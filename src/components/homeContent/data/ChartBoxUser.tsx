@@ -1,12 +1,14 @@
 import { FaAccessibleIcon } from "react-icons/fa";
 
+ 
 export const chartboxUser1 = {
-    color:"green",
+    color:"white",
     icon: <FaAccessibleIcon/>,
     title:"Total Users",
-    number:"12,344",
+    number:"10,000",
     datakey :"users",
     percentage: "45",
+    viewAllRoute: "/users",
     dataChart :[
         {name:"Sun" ,users:100},
         {name:"Mon" ,users:600},
@@ -19,30 +21,32 @@ export const chartboxUser1 = {
 };
 
 export const chartboxUser2 = {
-    color:"green",
+    color:"white",
     icon: <FaAccessibleIcon/>,
-    title:"Total revenue",
+    title:"Total Products",
     number:"10,344",
-    datakey :"revenue",
+    datakey :"product",
     percentage: "10",
+    viewAllRoute: "/products",
     dataChart :[
-        {name:"Sun" ,revenue:0},
-        {name:"Mon" ,revenue:200},
-        {name:"Tue" ,revenue:300},
-        {name:"Wed" ,revenue:450},
-        {name:"Thur" ,revenue:50},
-        {name:"Fri" ,revenue:420},
-        {name:"Sat" ,revenue:150}
+        {name:"Sun" ,product:0},
+        {name:"Mon" ,product:200},
+        {name:"Tue" ,product:300},
+        {name:"Wed" ,product:450},
+        {name:"Thur" ,product:50},
+        {name:"Fri" ,product:420},
+        {name:"Sat" ,product:150}
     ],
 };
 
 export const chartboxUser3 = {
-    color:"green",
+    color:"white",
     icon: <FaAccessibleIcon/>,
-    title:"Total Users",
+    title:"Total Comments",
     number:"15,344",
     datakey :"users",
     percentage: "-5",
+    viewAllRoute: "/comments",
     dataChart :[
         {name:"Sun" ,users:500},
         {name:"Mon" ,users:200},
@@ -54,12 +58,13 @@ export const chartboxUser3 = {
     ],
 };
 export const chartboxUser4 = {
-    color:"green",
+    color:"white",
     icon: <FaAccessibleIcon/>,
-    title:"Total Users",
+    title:"Total Posts",
     number:"10,344",
     datakey :"users",
     percentage: "10",
+    viewAllRoute: "/posts",
     dataChart :[
         {name:"Sun" ,users:1000},
         {name:"Mon" ,users:500},
