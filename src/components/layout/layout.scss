@@ -7,12 +7,13 @@
     display: flex;
     
     .layout-sidebar{
-      background-color: lightgreen;
-      height: 100vh;
-      border-right: 2px solid black;
-        @include lg{
-            width: max-content;
-        }
+      background-color: #fff;
+      height: 100%;
+      
+      z-index:999;
+        // @include lg{
+        //     width: max-content;
+        // }
       }
         
         .layout-outlet{

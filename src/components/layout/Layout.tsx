@@ -8,12 +8,13 @@ import './layout.scss'
 const Layout = () => {
   return (
 <div className='layout'>
-      <Navbar />
+      
       <div className='layout-component'>
         <div className='layout-sidebar'>
           <SideMenu />
         </div>
         <div className='layout-outlet'>
+        <Navbar />
           <Outlet />
         </div>
       </div>

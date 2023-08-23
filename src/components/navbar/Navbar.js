@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaExpand, FaTh } from "react-icons/fa";
 import './Navbar.scss'
 import logo from '../../assets/images/logo.png'
 

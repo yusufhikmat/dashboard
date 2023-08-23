@@ -1,10 +1,29 @@
 @import '../../style/responsive.scss';
 
 .sidemenu{
-   
-    width:240px;
-    @include md{
-        padding:0.2rem;
+    width:220px;
+    padding:2rem 0.5rem;
+
+
+    .navbar-logo{
+        display:flex;
+        align-items: center;
+        gap:10px;
+        padding: 1rem 0;
+        .logo{
+            width:50px;
+            height: 50px;
+            border-radius: 100%;
+
+            // @include md{
+            //     width:40px;
+            //     height: 40px;
+            // }
+           
+        }
+        .logo-title{
+            font-size: 1.4rem;
+        }
     }
     .nav-link{
         display:flex;
@@ -17,7 +36,6 @@
         color:#494545;
         gap:10px;
         align-items: center;
-        padding:0.5rem;
 
         &:active{
             background-color: red;
@@ -33,11 +51,48 @@
             }
             .title{
                 font-size: 1.2rem;
-                @include md{
-                    display:none;
-                }
+
+                // @include md{
+                //     display:none;
+                // }
             }
         }
+    }
+   &.open{
+    width:50px;
+    .navbar-logo{
+        display: flex;
+        flex-direction: column;
+        gap:5px;
+        .logo{
+            width:30px;
+            height: 30px;
+        }
+    }
+    .logo-title{
+        display: none;
+    }
+    .title{
+        display: none;
+    }
+   }
+    @include md{
+        width:80px;
+        .navbar-logo{
+            display: flex;
+            flex-direction: column;
+            gap:5px;
+            .logo{
+                width:40px;
+                height: 40px;
+            }
+        }
+        .logo-title{
+            display: none;
+        }
+        .title{
+            display: none;
+        } 
     }
     } 
     
