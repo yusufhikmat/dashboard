@@ -1,15 +1,18 @@
 @import "../../style/responsive.scss";
 
 .layout{
-  background-color:#eee;
+  background-color: red;
   .layout-component{
     display: flex;
     
      
         .layout-outlet{
           width:100%;
-          padding:1rem;
-          margin-top: 4rem;
+          .outlet{
+            background-color:#eee;
+            margin-top: 3rem;
+            padding:1rem;
+          }
         }
       
       

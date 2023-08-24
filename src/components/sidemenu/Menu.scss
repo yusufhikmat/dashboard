@@ -2,30 +2,35 @@
 
 .sidemenu{
     width:220px;
-    background-color: #fff;
+    background-color: rgb(191, 226, 191);
     height: 100vh;
     position: sticky;
     top:0;
     z-index: 999;
     left:0;
-    padding:2rem 0.5rem;
-    .navbar-logo{
+    padding: 0.5rem;
+    .sidebar{
         display:flex;
+        justify-content: space-between;
         align-items: center;
         padding: 1rem 0;
-        .logo{
-            width:50px;
-            height: 50px;
-            border-radius: 100%;
+        .sidebar-logo{
+            display: flex;
+            align-items: center;
+            gap:5px;
 
-            // @include md{
-            //     width:40px;
-            //     height: 40px;
-            // }
-           
+            .logo{
+                width:50px;
+                height: 50px;
+                border-radius: 100%;
+            }
+            .logo-title{
+                font-size: 1.4rem;
+            }
         }
-        .logo-title{
-            font-size: 1.4rem;
+        
+        .toggle-icon{
+            cursor: pointer;
         }
     }
     .nav-link{
@@ -34,16 +39,14 @@
         flex-direction: column;
         row-gap: 2.5rem;
         padding-left: 10px;
-    
+
     .sidemenu-link{
         display:flex;
         color:#494545;
         gap:10px;
         align-items: center;
         padding:0.5rem 0;
-        &:active{
-            background-color: red;
-        }
+        
          &:hover{
                 background-color: green;
                 color:#fff;
@@ -64,62 +67,41 @@
     }
    &.open{
     width:80px;
-    .navbar-logo{
-        display: flex;
+    .sidebar{
         flex-direction: column;
-        gap:5px;
-        .logo{
-            width:30px;
-            height: 30px;
-        }
+        gap:10px;
+        .sidebar-logo{
+            display: flex;
+            
+            .logo-title{
+                display: none;
+            }
     }
-    .logo-title{
-        display: none;
+    
     }
-   
+    
     .title{
         display: none;
     }
    }
     @include md{
         width:80px;
-        
-        .navbar-logo{
-            display: flex;
-            flex-direction: column;
-            gap:5px;
-            .logo{
-                width:40px;
-                height: 40px;
+        .sidebar{
+            display:flex;
+            .sidebar-logo{
+                display: flex;
+                
+                .logo-title{
+                    display: none;
+                }
             }
         }
-        .logo-title{
-            display: none;
-        }
+        
+        
         .title{
             display: none;
         } 
-        &.open{
-            width:250px;
-            position: absolute;
-            background-color: #fff;
-
-            .navbar-logo{
-                display: flex;
-                flex-direction: row;
-                gap:5px;
-                .logo{
-                    width:50px;
-                    height: 50px;
-                }
-            }
-            .logo-title{
-                display:flex;
-            }
-            .title{
-                display: flex;
-            } 
-        }
+      
     }
     } 
     

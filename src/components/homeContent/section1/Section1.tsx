@@ -7,7 +7,7 @@ const Section1 = () => {
     <div className='section1'>
         <h3>Users</h3>
         {data.map((item)=>{
-            return <li key={item.id} className='section1-list'>
+            return <div key={item.id} className='section1-list'>
                 <div className='section1-details'>
                     <img src={item.img} alt="user" className='user'/>
                     <div>
@@ -16,7 +16,7 @@ const Section1 = () => {
                     </div>
                 </div>
                 <div className='section1-amount'>{item.amount}</div>
-            </li>
+            </div>
         })}
     </div>
   )

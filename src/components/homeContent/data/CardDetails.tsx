@@ -1,9 +1,12 @@
-import { FaAccessibleIcon } from "react-icons/fa";
+import Person2Icon from '@mui/icons-material/Person2';
+import CommentIcon from '@mui/icons-material/Comment';
+import EmailIcon from '@mui/icons-material/Email';
+import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 
  
 export const box1 = {
     color:"white",
-    icon: <FaAccessibleIcon/>,
+    icon: <Person2Icon/>,
     title:"Total Users",
     number:"10,000",
     datakey :"users",
@@ -13,7 +16,7 @@ export const box1 = {
 
 export const box2 = {
     color:"white",
-    icon: <FaAccessibleIcon/>,
+    icon: <ProductionQuantityLimitsIcon/>,
     title:"Total Products",
     number:"10,344",
     datakey :"product",
@@ -24,7 +27,7 @@ export const box2 = {
 
 export const box3 = {
     color:"white",
-    icon: <FaAccessibleIcon/>,
+    icon: <CommentIcon/>,
     title:"Total Comments",
     number:"15,344",
     datakey :"users",
@@ -34,7 +37,7 @@ export const box3 = {
 };
 export const box4 = {
     color:"white",
-    icon: <FaAccessibleIcon/>,
+    icon: <EmailIcon/>,
     title:"Total Posts",
     number:"10,344",
     datakey :"users",

@@ -4,15 +4,16 @@ body,
     width:100%;
     position: relative;
     min-height: 100vh;
+    background-color: yellow;
     font-family: 'Poppins', sans-serif;
 }
 
-/* ::-webkit-scrollbar{
+ ::-webkit-scrollbar{
     width:100%;  
     background-color: green;  
 }
 
-::-webkit-scrollbar-track{
+/*::-webkit-scrollbar-track{
     background-color: red;
 }
 ::-webkit-scrollbar-thumb{

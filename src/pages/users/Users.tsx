@@ -10,7 +10,7 @@ const Users = () => {
   const [editOpen, setEditOpen] = useState(false);
   return (
     <div className='users'>
-    <button onClick={()=>setAddOpen(true)} className='btn-user'>Add new contact</button>
+    <button onClick={()=>setAddOpen(true)} className='btn-user'>Add new User</button>
      {addOpen && (
         <BasicModal open={addOpen} setOpen={setAddOpen}>
         <AddUser setAddOpen ={setAddOpen}/>

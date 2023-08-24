@@ -1,0 +1,31 @@
+.topbar{
+    position: fixed;
+    top:0;
+    width:100%;
+    z-index: 99;
+    background-color: #fff;
+    padding:0.5rem 1rem;
+    align-items: center;
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+
+    .user{
+        display:flex;
+        flex-direction: row;
+        gap:5px;
+        .user-first-letter{
+            height: 30px;
+            width:30px;
+            background-color: rgb(168, 231, 168);
+            border-radius: 100%;
+            border: 1px solid lightgreen;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .username{
+            font-size: 1.2rem;
+        }
+    }
+}
