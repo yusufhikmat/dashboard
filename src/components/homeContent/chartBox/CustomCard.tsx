@@ -4,14 +4,15 @@ import './ChartBox.scss';
 type BoxProps ={
     title:string,
     color:string,
-    icon:string, 
+    icon:React.ReactNode, 
     datakey:string,
     number:number | string,
-    percentage:number,
+    percentage:any,
     viewAllRoute:string,
   }
 
   const CustomCard = ({title,viewAllRoute,color,icon,datakey,number,percentage}:BoxProps) => {
+    
     return (
       <div className='custom-card'>
         <div className='custom-card-info'>

@@ -5,14 +5,7 @@
   .layout-component{
     display: flex;
     
-    .layout-sidebar{
-      background-color: red;
-      
-        // @include lg{
-        //     width: max-content;
-        // }
-      }
-        
+     
         .layout-outlet{
           width:100%;
           padding:1rem;

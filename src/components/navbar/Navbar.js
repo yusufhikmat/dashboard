@@ -7,6 +7,8 @@ const Navbar = () => {
     
         <div className='navbar-icons'>
         <span className='username'>Hikmah</span>
+
+        <p>wetyu</p>
             {/* <span className='navbar-icon'><FaExpand /></span>
             <span className='navbar-icon'><FaTh /></span>
             <span className='user'>
