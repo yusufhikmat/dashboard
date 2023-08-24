@@ -2,13 +2,15 @@
 
 .sidemenu{
     width:220px;
+    height: 100vh;
+    position: sticky;
+    top:0;
+    z-index: 999;
+    left:0;
     padding:2rem 0.5rem;
-
-
     .navbar-logo{
         display:flex;
         align-items: center;
-        gap:10px;
         padding: 1rem 0;
         .logo{
             width:50px;
@@ -30,6 +32,7 @@
         padding-top: 1rem;
         flex-direction: column;
         row-gap: 2.5rem;
+        padding-left: 10px;
     
     .sidemenu-link{
         display:flex;
@@ -59,7 +62,7 @@
         }
     }
    &.open{
-    width:50px;
+    width:80px;
     .navbar-logo{
         display: flex;
         flex-direction: column;
@@ -72,12 +75,14 @@
     .logo-title{
         display: none;
     }
+   
     .title{
         display: none;
     }
    }
     @include md{
         width:80px;
+        
         .navbar-logo{
             display: flex;
             flex-direction: column;
@@ -93,6 +98,27 @@
         .title{
             display: none;
         } 
+        &.open{
+            width:250px;
+            position: absolute;
+            background-color: #fff;
+
+            .navbar-logo{
+                display: flex;
+                flex-direction: row;
+                gap:5px;
+                .logo{
+                    width:50px;
+                    height: 50px;
+                }
+            }
+            .logo-title{
+                display:flex;
+            }
+            .title{
+                display: flex;
+            } 
+        }
     }
     } 
     

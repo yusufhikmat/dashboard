@@ -1,14 +1,10 @@
 import React from 'react'
 import './Navbar.scss'
-import logo from '../../assets/images/logo.png'
 
 const Navbar = () => {
   return (
     <div className='navbar'>
-    <div className='navbar-logo'>
-        <img src={logo} alt="leave" className='logo'/>
-        <span>Greenleaf</span>
-    </div>
+    
         <div className='navbar-icons'>
         <span className='username'>Hikmah</span>
             {/* <span className='navbar-icon'><FaExpand /></span>
