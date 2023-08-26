@@ -1,18 +1,25 @@
 @import "../../style/responsive.scss";
 
 .layout{
-  background-color: red;
+  width:100%;
   .layout-component{
     display: flex;
     
-     
+     .layout-sidebar{
+      
+      position:-webkit-sticky;
+      top:0;
+      left:0;
+      z-index: 999;
+     }
         .layout-outlet{
+          // flex:1;
           width:100%;
-          .outlet{
-            background-color:#eee;
-            margin-top: 3rem;
-            padding:1rem;
-          }
+           overflow: auto;
+          background-color:#eee;
+          margin-top: 3rem;
+          padding:1rem;
+          
         }
       
       

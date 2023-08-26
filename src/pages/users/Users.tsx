@@ -4,6 +4,7 @@ import BasicModal from '../../assets/modal'
 import './userTable/Users.scss'
 import UpdateUser from './addUser/UpdateUser'
 import AddUser from './addUser/AddUserForm'
+
 const Users = () => {
   
   const [addOpen, setAddOpen] = useState(false);
@@ -16,8 +17,7 @@ const Users = () => {
         <AddUser setAddOpen ={setAddOpen}/>
       </BasicModal>
      )}
-      
-      <UserTable setEditOpen={setEditOpen}/>
+      { <UserTable setEditOpen={setEditOpen}/> }
       {editOpen && (
         <BasicModal open={editOpen} setOpen={setEditOpen}>
         <UpdateUser setEditOpen ={setEditOpen}/>

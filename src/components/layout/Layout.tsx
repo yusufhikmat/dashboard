@@ -7,17 +7,14 @@ import './layout.scss';
 const Layout = () => {
   return (
 <div className='layout'>
-      <Topbar />
+      
       <div className='layout-component'>
         <div className='layout-sidebar'>
           <SideMenu />
         </div>
         <div className='layout-outlet'>
-          <div className="outlet">
+        <Topbar />
           <Outlet />
-          </div>
-        
-          
         </div>
       </div>
     </div>

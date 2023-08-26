@@ -4,61 +4,63 @@ import { DataGrid, GridColDef, GridToolbar } from '@mui/x-data-grid';
 import { useGetUsersQuery } from '../../../api/userApi';
 import SideDrawer from '../../../assets/sideDrawer';
 import UserDetail from '../userDetails/UserDetail';
+import { Box } from '@mui/material';
 
 type userTableProps = {
   setEditOpen : React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const UserTable = ({setEditOpen} :userTableProps)=> {
-  const columns: GridColDef[] = [
+  const columns = [
     { 
       field: 'id',
       headerName: 'ID',
-      //  width: 100 
     },
   
     { 
       field: 'name', 
-      headerName: 'Name', 
-       width: 200 
+      headerName: 'Name',
+      width:150,
+      cellClassName:"column-cell"
     },
     { 
       field: 'username', 
       headerName: 'Username', 
-      width: 200 
+      width:150,
     },
     { 
       field: 'email', 
       headerName: 'Email', 
-        width: 300 
+      width:200,
     },
     { 
       field: 'phone', 
-      headerName: 'Phone', 
-        width: 200 
+      headerName: 'Phone',
+      width:150,
     },
     { 
       field: 'address', 
-      headerName: 'Address', 
-      renderCell:(params)=> {
+      headerName: 'Address',
+      width:200, 
+      renderCell:(params:any)=> {
         const address = params.row.address;
         return (<p> {address.street}</p>)
       },
-        width: 200 
     },
     { 
       field: 'company.name', 
       headerName: 'company', 
-      renderCell:(params)=> {
+      width:150,
+      renderCell:(params:any)=> {
         const company = params.row.company;
         return (<p> {company.name}</p>)
       },
-        width: 200 
     },
     {
       field: 'details',
       headerName: 'Details',
-      renderCell: (params) => {
+      width:100,
+      renderCell: (params:any) => {
         const userId = params.row.id; // Get the ID from the current row
         return (
           <SideDrawer>
@@ -66,7 +68,6 @@ const UserTable = ({setEditOpen} :userTableProps)=> {
           </SideDrawer>
         );
       },
-      width: 100,
     },
   
   ];
@@ -74,10 +75,17 @@ const UserTable = ({setEditOpen} :userTableProps)=> {
   const { data,isLoading,isSuccess,isError } = useGetUsersQuery();
  
   return (
-    <div className='userTable'>
+    <Box width="100%" height="100%"
+    >
       {isLoading && <h3>Loading...</h3>}
       {isError && <h3>error</h3>}
       {isSuccess && (
+      <Box
+      sx={{
+        "& .MuiDataGrid-root":{border:"none"},
+        "& .MuiDataGrid-footerContainer":{backgroundColor:"green", color:"white"},
+      }}>
+        
       <DataGrid
       rows={data}
       columns={columns}
@@ -100,12 +108,12 @@ const UserTable = ({setEditOpen} :userTableProps)=> {
       disableColumnSelector
       disableDensitySelector
     />
+    </Box>
       )}
-     {/* {data ?(
-      
-     ):(<div>Loading ...</div>) } */}
-      
-    </div>
+     
+     </Box>
   );
+
+  
 }
 export default UserTable;

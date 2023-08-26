@@ -1,13 +1,11 @@
 @import '../../style/responsive.scss';
 
 .sidemenu{
+    // background-color: rgb(191, 226, 191);
+    background-color: rgb(245, 90, 33);
+    color: white;
+    height: 100%;
     width:220px;
-    background-color: rgb(191, 226, 191);
-    height: 100vh;
-    position: sticky;
-    top:0;
-    z-index: 999;
-    left:0;
     padding: 0.5rem;
     .sidebar{
         display:flex;
@@ -42,7 +40,7 @@
 
     .sidemenu-link{
         display:flex;
-        color:#494545;
+        color:#fff;
         gap:10px;
         align-items: center;
         padding:0.5rem 0;
@@ -94,6 +92,9 @@
                 .logo-title{
                     display: none;
                 }
+            }
+            .toggle-icon{
+                display: none;
             }
         }
         

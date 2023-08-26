@@ -10,7 +10,7 @@ const Section1 = () => {
             return <div key={item.id} className='section1-list'>
                 <div className='section1-details'>
                     <img src={item.img} alt="user" className='user'/>
-                    <div>
+                    <div className='name-email'>
                     <p className='section1-name'>{item.name}</p>
                     <p className='section1-email'>{item.email}</p>
                     </div>

@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 type Props ={
     children:any
@@ -20,7 +20,15 @@ const SideDrawer = ({children}:Props) => {
 
   return (
     <div>
-      <Button onClick={toggleDrawer(true)}>View</Button>
+      <Box onClick={toggleDrawer(true)}
+       width="60px"
+       m="0 auto"
+       p="5px"
+       display="flex"
+       justifyContent="center"
+       color="green"
+       
+       >View</Box>
       <Drawer
         anchor={'right'}
         open={state['right']}

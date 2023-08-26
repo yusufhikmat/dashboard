@@ -24,6 +24,11 @@
                 border-radius: 50%;
                 object-fit: cover;
                 }
+                .name-email{
+                    @include sm{
+                        font-size: 0.7rem;
+                    }
+                }
         }
 
         .section1-amount{

@@ -12,7 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 const SideMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
   const toggle = ()=>{
-    setIsOpen(!isOpen)
+    setIsOpen(!isOpen);
   }
   return (
     <div className={`sidemenu ${isOpen ? "open" : ""}`}>

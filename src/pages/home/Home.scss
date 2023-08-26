@@ -11,6 +11,9 @@ h3{
    padding-bottom: 3px;
    margin-bottom: 1rem;
 
+   @include lg{
+    font-size: 20px;
+   }
    @include sm{
     font-size: 15px;
    }
