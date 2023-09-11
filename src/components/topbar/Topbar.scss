@@ -6,12 +6,27 @@
     right:0;
     z-index: 99;
     background-color: #fff;
-    padding:0.5rem 1rem;
+    padding:0.5rem 2rem;
+    height: 4rem;
     align-items: center;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 1rem;
 
+    .topbar-logo{
+        display: flex;
+        align-items: center;
+        gap:5px;
+
+        .logo{
+            width:50px;
+            height: 50px;
+            border-radius: 100%;
+        }
+        .logo-title{
+            font-size: 1.4rem;
+        }
+    }
     .user{
         display:flex;
         flex-direction: row;

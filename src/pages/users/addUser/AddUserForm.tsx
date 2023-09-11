@@ -155,10 +155,10 @@ const AddUser = ({setAddOpen}:AddUserProps) => {
           onChange={(e)=>setWebsite(e.target.value)}/>
         </div>
         <Button 
-        type="button"
+        type="submit"
          className="custom-class" 
          color="green"
-          >Add product</Button>
+          >Add user</Button>
       </form>
     </div>
   )

@@ -17,6 +17,7 @@
     "@types/react": "^18.2.16",
     "@types/react-dom": "^18.2.7",
     "@types/react-router-dom": "^5.3.3",
+    "fullcalendar-scheduler": "^6.1.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icon": "^1.0.0",
@@ -53,5 +54,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }

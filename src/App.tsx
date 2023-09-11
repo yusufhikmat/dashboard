@@ -10,6 +10,7 @@ import Login from './pages/login/Login';
 import Layout from './components/layout/Layout';
 import Posts from './pages/posts/Posts';
 import Comments from './pages/comments/Comments';
+import Calender from './pages/calender/Calender';
 
 function App() {
   const router = createBrowserRouter([
@@ -36,6 +37,10 @@ function App() {
         {
           path: "comments",
           element: <Comments />
+        },
+        {
+          path: "calender",
+          element: <Calender />
         },
       ],
       

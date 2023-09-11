@@ -7,24 +7,28 @@ type UpdateUserProps = {
   setEditOpen : React.Dispatch<React.SetStateAction<boolean>>
 }
 const UpdateUser = ({setEditOpen}:UpdateUserProps) => {
-  const [name, setName] = useState("");
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [website, setWebsite] = useState("");
   const {data = []} = useGetUsersQuery();
-  const [UpdateUser] = useUpdateUserMutation();
-  const {id} = useParams();
-  const editData = data.find((data)=> (data.id) === id)
+ const user = data.length > 0 ? data[0] : null;
+  const [name, setName] = useState(user?.name || "");
+  const [username, setUsername] = useState(user?.username ||"");
+  const [email, setEmail] = useState(user?.email || "");
+  const [phone, setPhone] = useState(user?.phone || "");
+  const [address, setAddress] = useState(user?.address.street || "");
+  const [companyName, setCompanyName] = useState(user?.company.name || "");
+  const [website, setWebsite] = useState(user?.website || "");
   
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const [UpdateUser] = useUpdateUserMutation();
+   const {id} =   useParams();
+   console.log(id)
+  //  const userid = data.find(userData => userData.id === id);  
+  //  console.log(id, userid)
+  
+   const handleSubmit = async (e: React.FormEvent) => {
+     e.preventDefault();
    
 
-    console.log('Submitting user data:', {
-      id: editData,
+    console.log('updating user data:', {
+      id:id,
       name: name,
       username: username,
       email: email,
@@ -49,7 +53,7 @@ const UpdateUser = ({setEditOpen}:UpdateUserProps) => {
 
     try {
       await UpdateUser({
-        id:editData,
+        id:id,
         name: name,
         username: username,
         email: email,
@@ -149,14 +153,14 @@ const UpdateUser = ({setEditOpen}:UpdateUserProps) => {
         <div className='adduserInput'>
           <label htmlFor='website'>website</label>
           <input 
-          type="url"
+          type="text"
           required
           name="website"
           value={website} 
           onChange={(e)=>setWebsite(e.target.value)}/>
         </div>
         <Button 
-        type="button"
+        type="submit"
          className="custom-class" 
          color="green"
           >Update user</Button>

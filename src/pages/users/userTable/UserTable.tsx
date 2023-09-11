@@ -59,7 +59,7 @@ const UserTable = ({setEditOpen} :userTableProps)=> {
     {
       field: 'details',
       headerName: 'Details',
-      width:100,
+      width:150,
       renderCell: (params:any) => {
         const userId = params.row.id; // Get the ID from the current row
         return (

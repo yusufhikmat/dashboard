@@ -24,7 +24,7 @@ const UserDetail= ({userId, setEditOpen}:UserDetailProps) => {
       <div className='userDetail'>
         {data ? (
         <>
-        <div className='userDetail-list'>
+        <div className='userDetail-list' key={data.id}>
             <h3 className='userDetail-title'>User Details</h3> 
             <p className='userDetail-name'><b>Name</b> : {data.name}</p>
             <p className='userDetail-username'><b>Username</b> : {data.username}</p>

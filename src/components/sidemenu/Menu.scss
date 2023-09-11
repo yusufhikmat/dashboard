@@ -1,108 +1,58 @@
 @import '../../style/responsive.scss';
-
+.sidemenu-container{
+.toggle-icon{
+    position:fixed;
+    top:20px;
+    z-index: 99;
+    border:none;
+    right:0;
+    padding-left: 20px;
+    background-color: #fff;
+    display:none;
+    @include md{
+        display:flex;
+    }
+}
 .sidemenu{
-    // background-color: rgb(191, 226, 191);
+    position: fixed;
+    top:4rem;
     background-color: rgb(245, 90, 33);
     color: white;
-    height: 100%;
     width:220px;
-    padding: 0.5rem;
-    .sidebar{
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 0;
-        .sidebar-logo{
-            display: flex;
-            align-items: center;
-            gap:5px;
-
-            .logo{
-                width:50px;
-                height: 50px;
-                border-radius: 100%;
-            }
-            .logo-title{
-                font-size: 1.4rem;
-            }
-        }
-        
-        .toggle-icon{
-            cursor: pointer;
-        }
-    }
-    .nav-link{
-        display:flex;
-        padding-top: 1rem;
-        flex-direction: column;
-        row-gap: 2.5rem;
-        padding-left: 10px;
-
+    height: 100vh;
+    display:flex;
+    padding-top: 1rem;
+    flex-direction: column;
+    line-height: 3rem;
+    z-index: 99;
     .sidemenu-link{
         display:flex;
         color:#fff;
         gap:10px;
         align-items: center;
-        padding:0.5rem 0;
-        
+        padding:0.6rem ;
+        margin: 0.5rem 0;
          &:hover{
                 background-color: green;
                 color:#fff;
-                border-radius: 0.3rem;
-                
             }
             .icon{
                 font-size: 1.5rem; 
             }
             .title{
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+            }
+        }
+        @include md{
+            display:none; 
 
-                // @include md{
-                //     display:none;
-                // }
-            }
-        }
-    }
-   &.open{
-    width:80px;
-    .sidebar{
-        flex-direction: column;
-        gap:10px;
-        .sidebar-logo{
-            display: flex;
-            
-            .logo-title{
-                display: none;
-            }
-    }
-    
-    }
-    
-    .title{
-        display: none;
-    }
-   }
-    @include md{
-        width:80px;
-        .sidebar{
-            display:flex;
-            .sidebar-logo{
-                display: flex;
-                
-                .logo-title{
-                    display: none;
-                }
-            }
-            .toggle-icon{
-                display: none;
+            &.visible{
+                display:flex;
             }
         }
         
-        
-        .title{
-            display: none;
-        } 
-      
+        }
+
     }
-    } 
+
     
